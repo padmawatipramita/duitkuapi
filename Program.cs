@@ -27,7 +27,6 @@ namespace DuitKu.API
    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .UseUrls("http://*:" + Environment.GetEnvironmentVariable("PORT"))
                 .UseIISIntegration()
                 .UseIIS();
     }
