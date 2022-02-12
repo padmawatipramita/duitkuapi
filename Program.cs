@@ -31,7 +31,6 @@ namespace DuitKu.API
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseUrls("http://*:" + Environment.GetEnvironmentVariable("PORT")); 
                 });
-                .UseIISIntegration()
-                .UseIIS();
+     
     }
 }
