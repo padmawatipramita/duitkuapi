@@ -24,12 +24,14 @@ namespace DuitKu.API
             CreateWebHostBuilder(args).Build().Run();
         }
 
-      public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseUrls("http://*:" + Environment.GetEnvironmentVariable("PORT")); 
                 });
+                .UseIISIntegration()
+                .UseIIS();
     }
 }
